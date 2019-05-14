@@ -20,14 +20,14 @@ public protocol Validatable {
 extension UITextField: Validatable {
     
     open var validationText: String {
-        return text ?? ""
+        return text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     }
 }
 
 extension UITextView: Validatable {
     
     public var validationText: String {
-        return text ?? ""
+        return text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
